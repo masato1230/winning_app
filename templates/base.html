@@ -15,7 +15,7 @@
   <header class="header">
     <div class="header__inner container">
       <div class="header__left">
-        <a href=""><h1 class="header__title">ウイイレアプリ2021掲示板【ウイイレポスト】</h1></a>
+        <a href="{% url 'home' %}"><h1 class="header__title">ウイイレアプリ2021掲示板【ウイイレポスト】</h1></a>
       </div>
       <div class="header__right">
         <ul class="header__items">
@@ -38,7 +38,7 @@
       </div>
       <div class="footer__left">
         <ul class="footer__items">
-          <li class="footer__item"><a class="footer__link">スレッド一覧</a></li>
+          <li class="footer__item"><a href="{% url 'home' %}" class="footer__link">スレッド一覧</a></li>
           <li class="footer__item"><a class="footer__link">スレッドを作る</a></li>
         </ul>
       </div>
