@@ -10,4 +10,9 @@ def home(request):
 
 def thread(request, thread_id):
   thread = get_object_or_404(Thread, pk=thread_id)
-  return render(request, 'winning_app/thread.html', {'thread': thread})
+  comments = Comment.objects.all().filter(thread_id=thread_id)
+  context = {
+    'thread': thread,
+    'comments': comments,
+  }
+  return render(request, 'winning_app/thread.html', context)

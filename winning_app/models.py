@@ -12,7 +12,7 @@ class Thread(models.Model):
 class Comment(models.Model):
   thread_id = models.IntegerField(null=False)
   comment = models.CharField(max_length=200)
-  nick_name = models.CharField(max_length=20, null=True)
+  nick_name = models.CharField(max_length=20, null=True, default='匿名さん')
   created_time = models.DateTimeField(auto_now_add=True)
   goods = models.IntegerField(blank=True, default=0)
   replies = models.IntegerField(blank=True, default=0)

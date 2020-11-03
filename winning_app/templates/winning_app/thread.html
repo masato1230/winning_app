@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block customcss %}{% static 'css/thread.css' %}{% endblock customcss %}
+
+{% block content %}
+
+<section class="main">
+  <div class="container">
+
+    {% for comment in comments %}
+      <div class="main__card">
+        
+        <h2 class="main__card-title">{{ comment.comment }}</h2>
+        <p class="main__card-created-time">{{ comment.created_time|date:"Y/m月d日 f" }}</p>
+      </div>
+    
+    {% endfor %}
+
+  </div>
+</section>
+
+{% endblock content %}
