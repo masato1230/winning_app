@@ -4,14 +4,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>【ウイイレポスト2021】ウイイレ2021掲示板</title>
+  <title>【ウイイレポスト2021】ウイイレアプリ2021掲示板</title>
   <meta name="description" content="ウイイレポスト2021はウイニングイレブン2021の掲示板サイトです。フレマ募集や情報共有に使ってください！">
   <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% block customcss %}{% endblock customcss %}">
 </head>
 <body>
-  <h1 class="h">kdfkdfj</h1>
-  <h2>dkdjfkd</h2>
+
+  <header class="header">
+    <div class="header__inner container">
+      <div class="header__left">
+        <a href=""><h1 class="header__title">ウイイレアプリ2021掲示板【ウイイレポスト】</h1></a>
+      </div>
+      <div class="header__right">
+        <ul class="header__items">
+          <li class="header__item"><a class="header__link" href="">ホーム</a></li>
+          <li class="header__item"><a class="header__link" href="">スレッド一覧</a></li>
+          <li class="header__item"><a class="header__link" href="">スレッドを作る</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="header__height"></div>
+
+
   {% block content %}
   {% endblock content %}
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__right">
+        <p class="footer__copyright">created by masato</p>
+      </div>
+      <div class="footer__left">
+        <ul class="footer__items">
+          <li class="footer__item"><a class="footer__link">ホーム</a></li>
+          <li class="footer__item"><a class="footer__link">スレッド一覧</a></li>
+          <li class="footer__item"><a class="footer__link">スレッドを作る</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
