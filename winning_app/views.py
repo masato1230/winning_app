@@ -16,3 +16,6 @@ def thread(request, thread_id):
     'comments': comments,
   }
   return render(request, 'winning_app/thread.html', context)
+
+def new_thread(request):
+  return render(request, 'winning_app/new_thread.html', {})
