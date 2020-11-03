@@ -1,8 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
+
+
+{% block customcss %} {% static 'css/home.css' %} {% endblock customcss %}
 
 {% block content %}
-<br>
-<br>
-<br>
-<br>
+
+<section class="top">
+  <div class="container">
+
+    {% for thread in threads %}
+    <a class="top__card-link" href="{% url 'thread' thread.id %}">
+    <div class="top__card">
+      <div class="top__card-inner">
+        <h2 class="top__thread-title">{{ thread.thread_title }}</h2>
+        <p class="top__thread-desc">{{ thread.thread_desc }}</p>
+        <p class="top__created-date">スレッド作成日時：{{ thread.created_date|date:"Y/m月d日 f" }}</p>
+      </div>
+    </div>
+    </a>
+    {% endfor %}
+
+  </div>
+  </section>
+
 {% endblock content %}
