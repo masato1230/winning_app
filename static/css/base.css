@@ -23,6 +23,8 @@ a:hover {
   background-color: #fff;
   position: fixed;
   width: 100%;
+  z-index: 10;
+  opacity: 0.9;
 }
 
 .header__inner {
@@ -58,6 +60,7 @@ a:hover {
   padding: 40px;
   border-top: 4px solid black;
   color: #16325c;
+  background-color: #fff;
 }
 
 .footer .container {

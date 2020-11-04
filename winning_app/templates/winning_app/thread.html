@@ -16,17 +16,19 @@
         <p class="main__card-created-time">{{ comment.created_time|date:"Y/m月d日 A f" }}</p>
       </div>
     {% endfor %}
-
+    
   </div>
+  
+  
 </section>
+    <div class="comment-form__wrapper">
+      <form class="comment-form" action="" method="POST">
+        {% csrf_token %}
+        <input name="comment" type="text">
+        <input name="nick_name" type="text">
+        <button type="submit">コメント投稿</button>
+      </form>
+    </div>
 
-<div class="comment-form__wrapper">
-  <form class="comment-form" action="" method="POST">
-    {% csrf_token %}
-    <input name="comment" type="text">
-    <input name="nick_name" type="text">
-    <button type="submit">コメント投稿</button>
-  </form>
-</div>
 
 {% endblock content %}

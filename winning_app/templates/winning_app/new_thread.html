@@ -1,14 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block customcss %}
+{% static 'css/new_thread.css' %}
+{% endblock customcss %}
+
+
 {% block content %}
 
 <section class="main">
   <p>{{ error_message }}</p>
   <div class="container">
-    <form action="" method="POST" class="">
+    <form class="main__form" action="" method="POST" class="">
       {% csrf_token %}
-      {{ form.as_p }}
+      <div class="form__div">
+        <h2 class="form__label-thread-title">スレッドタイトル(必須)</h2>
+        <input class="form__thread-title" name="thread_title" type="text">
+      </div>
+      <div class="form__div">
+        <p class="form__label-thread-desc">(任意) スレッドの説明を書いてください</p>
+        <textarea class="form__thread-desc" name="thread_desc" id="" cols="30" rows="10"></textarea>
+      </div>
+      <div class="form__div">
+        <p class="form__label-tags">(任意) タグは「,」で区切ってください。</p>
+        <input class="form__tags" name="tags" type="text" placeholder="フレマ,アプデ延長">
+      </div>
       <button type="submit" class="">スレッド作成</button>
      </form>
   </div>
