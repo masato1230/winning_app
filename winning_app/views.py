@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Thread, Comment
-# Create your views here.
+from .forms import CreateThreadForm
+
 
 
 def home(request):
@@ -18,4 +19,11 @@ def thread(request, thread_id):
   return render(request, 'winning_app/thread.html', context)
 
 def new_thread(request):
-  return render(request, 'winning_app/new_thread.html', {})
+  error_message = ""
+  context = {}
+  form = CreateThreadForm(request.POST or None)
+  if request.POST.get('thread_title'):
+    obj = form.save()
+    form = CreateThreadForm()
+  context['form'] = form
+  return render(request, 'winning_app/new_thread.html', context)
