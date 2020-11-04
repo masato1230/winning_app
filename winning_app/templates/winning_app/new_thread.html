@@ -2,4 +2,26 @@
 {% load static %}
 
 {% block content %}
+
+<section class="main">
+  <div class="container">
+    <form action="" class="main__new-thread-form" method="POST">
+      {% csrf_token %}
+      <div class="form__thread-title">
+        <p class="form__label">スレッドタイトルを入力してください！</p>
+        <input name="thread_title" type="text">
+      </div>
+      <div class="form__thread-desc">
+        <p class="form__label">(任意)スレッドの説明文を書いてください！</p>
+        <textarea name="thread_desc" id="" cols="30" rows="10"></textarea>
+      </div>
+      <div class="form__thread-tags">
+        <p class="form__label">(任意)タグを設定してください　(タグは「,」で区切ってください。)</p>
+        <input type="tags" placeholder="例：　フレマ募集,アプデ延期">
+      </div>
+      <p><input type="submit"></p>
+    </form>
+  </div>
+</section>
+
 {% endblock content %}
