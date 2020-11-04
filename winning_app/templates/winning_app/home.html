@@ -15,13 +15,14 @@
       <div class="top__card-inner">
         <h2 class="top__thread-title">{{ thread.thread_title }}</h2>
         <p class="top__thread-desc">{{ thread.thread_desc }}</p>
-        <p class="top__created-date">スレッド作成日時：{{ thread.created_date|date:"Y/m月d日 f" }}</p>
+        <p class="top__created-date">スレッド作成日時：{{ thread.created_date|date:"Y/m月d日 A f" }}</p>
       </div>
     </div>
     </a>
     {% endfor %}
 
   </div>
-  </section>
+</section>
+
 
 {% endblock content %}

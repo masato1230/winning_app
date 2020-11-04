@@ -20,6 +20,7 @@ a:hover {
 .header {
   box-shadow: 0 1px 3px rgba(160,166,179,0.3);
   color: #16325c;
+  background-color: #fff;
   position: fixed;
   width: 100%;
 }
