@@ -21,7 +21,11 @@ def thread(request, thread_id):
     comment = request.POST['comment']
     nick_name = request.POST['nick_name']
     new_comment = Comment(thread_id=thread_id, comment=comment, nick_name=nick_name)
+    thread.comment_number += 1
+    print(thread.comment_number)
     new_comment.save()
+    thread.save()
+    
 
   return render(request, 'winning_app/thread.html', context)
 
