@@ -17,6 +17,7 @@
         <p class="main__card-comment-number">{{ forloop.counter }}</p>
         <p class="main__card-nick-name">ニックネーム：{{ comment.nick_name }}</p>
         <h2 class="main__card-title">{{ comment.comment }}</h2>
+        <a href="{% url 'goods' comment.id thread.id %}">good{{ comment.goods }}</a>
         <p class="main__card-created-time">{{ comment.created_time|date:"Y/m月d日 A f" }}</p>
       </div>
     {% endfor %}

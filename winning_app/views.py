@@ -42,3 +42,10 @@ def new_thread(request):
     thread_id = created_thread.id
     return redirect('thread', thread_id=thread_id)
   return render(request, 'winning_app/new_thread.html', context)
+
+def goods(request, comment_id, thread_id):
+  good_comment = get_object_or_404(Comment, pk=comment_id)
+  good_comment.goods += 1
+  good_comment.save()
+  print(good_comment.goods)
+  return redirect('thread', thread_id=thread_id)
