@@ -3,13 +3,28 @@
 
 /* main */
 .main {
-  padding-top: 100px;
-  padding-bottom: 200px;
+  padding-top: 30px;
+  padding-bottom: 300px;
   background-color: #88e7ce;
 }
 
 .main .container {
   position: relative;
+}
+
+.thread-title {
+  color: rgb(43, 84, 106);
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.thread-desc {
+  margin: 40px;
+}
+
+.thread-created-date {
+  text-align: right;
+  margin-bottom: 20px;
 }
 
 
@@ -44,7 +59,7 @@
 .comment-form__wrapper {
   padding: 20px;
   position: absolute;
-  bottom: -210px;
+  bottom: -300px;
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 5px;
   transition: all 0.3s ease-in-out 0s;
@@ -58,9 +73,12 @@
 }
 
 input {
+  margin-bottom: 20px;
   width: 100%;
 }
 
 textarea {
   height: 3rem;
+  width: 100%;
+  margin-bottom: 20px;
 }
