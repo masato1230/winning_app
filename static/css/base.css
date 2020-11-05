@@ -1,5 +1,10 @@
 
 /* 全体 */
+
+* {
+  box-sizing: border-box;
+}
+
 .container {
   width: 90%;
   box-sizing: border-box;

@@ -6,8 +6,12 @@
 {% block content %}
 
 <section class="main">
+  <div class="container">
+    <h1 class="thread-title">{{ thread.thread_title }}</h1>
+    <p class="thread-desc">{{ thread.thread_desc }}</p>
+    <p class="thread-created-date">{{ thread.created_date|date:"Y/m月d日 A f" }}</p>
+  </div>
   <div class="container main__card-wrapper">
-
     {% for comment in comments %}
       <div class="main__card">
         <p class="main__card-comment-number">{{ forloop.counter }}</p>
@@ -17,18 +21,22 @@
       </div>
     {% endfor %}
     
-  </div>
-  
-  
-</section>
     <div class="comment-form__wrapper">
       <form class="comment-form" action="" method="POST">
         {% csrf_token %}
-        <input name="comment" type="text">
-        <input name="nick_name" type="text">
+        <div class="comment-form__div">
+          <p>(任意)ニックネーム</p>
+          <input name="comment" type="text">
+        </div>
+        <div class="comment-form__div">
+          <p>コメント</p>
+          <textarea name="nick_name" id="" cols="30" rows="10"></textarea>
+        </div>
         <button type="submit">コメント投稿</button>
       </form>
     </div>
+  </div>
+</section>
 
 
 {% endblock content %}

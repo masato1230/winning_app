@@ -4,8 +4,12 @@
 /* main */
 .main {
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 200px;
   background-color: #88e7ce;
+}
+
+.main .container {
+  position: relative;
 }
 
 
@@ -33,4 +37,30 @@
 
 .main__card-created-time {
   text-align: right;
+}
+
+
+/* comment-form */
+.comment-form__wrapper {
+  padding: 20px;
+  position: absolute;
+  bottom: -210px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 5px;
+  transition: all 0.3s ease-in-out 0s;
+  color: rgb(43, 84, 106);
+  width: 100%;
+}
+
+
+.comment-form__div {
+  margin-right: 40px;
+}
+
+input {
+  width: 100%;
+}
+
+textarea {
+  height: 3rem;
 }
