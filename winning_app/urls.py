@@ -6,4 +6,5 @@ urlpatterns = [
   path('thread/<int:thread_id>', views.thread, name='thread'),
   path('new_thread/', views.new_thread, name='new_thread'),
   path('good/<int:comment_id>/<int:thread_id>', views.goods, name='goods'),
+  path('reply/<int:comment_id>/<int:thread_id>', views.reply, name='reply'),
 ]

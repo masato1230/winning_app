@@ -5,7 +5,7 @@ class Thread(models.Model):
   thread_desc = models.TextField(blank=True)
   created_date = models.DateTimeField(auto_now_add=True)
   tags = models.TextField(blank=True)
-  comment_number = models.IntegerField(blank=True)
+  comment_number = models.IntegerField(blank=True,default=0)
 
   def __str__(self):
     return self.thread_title

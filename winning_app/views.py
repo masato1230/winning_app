@@ -49,3 +49,24 @@ def goods(request, comment_id, thread_id):
   good_comment.save()
   print(good_comment.goods)
   return redirect('thread', thread_id=thread_id)
+
+def reply(request, comment_id, thread_id):
+  replied_comment = get_object_or_404(Comment, pk=comment_id)
+  thread = get_object_or_404(Thread, pk=thread_id)
+  comments = Comment.objects.all().filter(thread_id=thread_id)
+  context = {
+    'thread': thread,
+    'comments': comments,
+    'replied_comment': replied_comment,
+  }
+
+  if request.method == "POST":
+    comment = request.POST['comment']
+    nick_name = request.POST['nick_name']
+    new_comment = Comment(thread_id=thread_id, comment=comment, nick_name=nick_name)
+    thread.comment_number += 1
+    print(thread.comment_number)
+    new_comment.save()
+    thread.save()
+  
+  return render(request, 'winning_app/thread.html', context)

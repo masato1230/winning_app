@@ -13,11 +13,12 @@
   </div>
   <div class="container main__card-wrapper">
     {% for comment in comments %}
-      <div class="main__card">
+      <div class="main__card"　id={{ comment.id }}>
         <p class="main__card-comment-number">{{ forloop.counter }}</p>
         <p class="main__card-nick-name">ニックネーム：{{ comment.nick_name }}</p>
-        <h2 class="main__card-title">{{ comment.comment }}</h2>
+        <h2 class="main__card-title">{{ comment.comment|linebreaksbr }}</h2>
         <a href="{% url 'goods' comment.id thread.id %}">{{ comment.goods }} いいね！</a>
+        <a href="{% url 'reply' comment.id thread.id %}">返信</a>
         <p class="main__card-created-time">{{ comment.created_time|date:"Y/m月d日 A f" }}</p>
       </div>
     {% endfor %}
@@ -27,11 +28,15 @@
         {% csrf_token %}
         <div class="comment-form__div">
           <p>(任意)ニックネーム</p>
-          <input name="comment" type="text">
+          <input name="nick_name" type="text">
         </div>
         <div class="comment-form__div">
           <p>コメント</p>
-          <textarea name="nick_name" id="" cols="30" rows="10"></textarea>
+          {% if replied_comment %}
+            <textarea name="comment" id="" cols="30" rows="10">>>{{ replied_comment.comment }}</textarea>
+          {% else %}
+            <textarea name="comment" id="" cols="30" rows="10">{{ replied_comment.comment }}</textarea>
+          {% endif %}
         </div>
         <button type="submit">コメント投稿</button>
       </form>
